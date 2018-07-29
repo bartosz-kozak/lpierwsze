@@ -1,0 +1,13 @@
+<center><h1>LICZBY PIERWSZE</h1></center>
+<p>Program podaje liczbę liczb pierwszych w zadanym przedziale, możesz podać liczby z przedziału 2 - 1000</p>
+
+<form action="{% url 'lpierwsze' %}">
+	<lable for="p1">Podaj dol przedzialu: </lable>
+	<input type="number" id="p1" name="p1" />
+	<lable for="p2">Podaj gore przedzialu: </lable>
+	<input type="number" id="p2" name="p2" />
+	<input type="submit" value="Zatwierdź" />
+
+</form>
+
+<a href="{% url 'liczby' %}">O liczbach pierwszych</a>
