@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'home.html',{'tytul':'Znajdź liczby pierwsze'})
 
 def lpierwsze(request):
     n = 0 # zmienna do obliczenia liczby liczb pierwszej
@@ -10,9 +10,9 @@ def lpierwsze(request):
     p1 = int(request.GET['p1'])
     p2 = int(request.GET['p2'])
     if p1 == 1 or p2 == 1:
-        return render(request, 'error.html')
+        return render(request, 'error.html',{'tytul':'Błąd'})
     if p1 > 10000 or p2 > 10000:
-        return render(request, 'error.html')
+        return render(request, 'error.html',{'tytul':'Błąd'})
     else:
         if p1 > p2:
             p3 = p1
@@ -34,7 +34,7 @@ def lpierwsze(request):
                         d = 1
                         l.append(a)
 
-        return render(request, 'lpierwsze.html',{'p1':p1,'p2':p2,'n':n,'l':l})
+        return render(request, 'lpierwsze.html',{'p1':p1,'p2':p2,'n':n,'l':l,'tytul':'Liczby pierwsze w przedziale'})
 
 def liczby(request):
-    return render(request, 'liczby.html')
+    return render(request, 'liczby.html',{'tytul':'O liczbach pierwszych'})
