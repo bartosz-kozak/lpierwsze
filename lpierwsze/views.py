@@ -9,7 +9,7 @@ def lpierwsze(request):
     l = [] # lista liczb pierwszych
     p1 = int(request.GET['p1'])
     p2 = int(request.GET['p2'])
-    if p1 == 1 or p2 == 1:
+    if p1 <= 1 or p2 <= 1:
         return render(request, 'error.html',{'tytul':'Błąd'})
     if p1 > 10000 or p2 > 10000:
         return render(request, 'error.html',{'tytul':'Błąd'})
@@ -38,3 +38,5 @@ def lpierwsze(request):
 
 def liczby(request):
     return render(request, 'liczby.html',{'tytul':'O liczbach pierwszych'})
+#def ulam(request):
+    
