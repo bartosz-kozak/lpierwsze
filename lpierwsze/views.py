@@ -7,8 +7,14 @@ def home(request):
 def lpierwsze(request):
     n = 0 # zmienna do obliczenia liczby liczb pierwszej
     l = [] # lista liczb pierwszych
-    p1 = int(request.GET['p1'])
-    p2 = int(request.GET['p2'])
+    p1 = request.GET['p1']
+    p2 = request.GET['p2']
+    if 'e' in p1 or 'e' in p2:
+        p1 = float(p1)
+        p2 = float(p2)
+        #return render(request, 'error.html',{'tytul':'Błąd'})
+    p1 = int(p1)
+    p2 = int(p2)
     if p1 <= 1 or p2 <= 1:
         return render(request, 'error.html',{'tytul':'Błąd'})
     if p1 > 10000 or p2 > 10000:
