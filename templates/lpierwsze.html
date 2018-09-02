@@ -13,9 +13,7 @@
 			<h1>Liczba liczb pierwszych w przedziale {{ p1 }} - {{ p2 }} wynosi: {{ n }}</h1>
 			<h2>Liczby pierwsze w tym przedziale to: </h2>
 			<p> {{ l }} </p>
-			<form action="{% url ' ' %}">
-				<input type="submit" value="Jeszcze raz" />
-			</form>
+			<a class="btn btn-secondary" href="{% url ' '  %}" role="button">Jeszcze raz</a>
 		</div>
 	</body>
 </html>
