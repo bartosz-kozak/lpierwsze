@@ -9,6 +9,8 @@ def lpierwsze(request):
     l = [] # lista liczb pierwszych
     p1 = request.GET['p1']
     p2 = request.GET['p2']
+    if len(p1) == 0 or len(p2) == 0:
+        return render(request, 'error.html',{'tytul':'Błąd'})
     if 'e' in p1 or 'e' in p2:
         p1 = float(p1)
         p2 = float(p2)
