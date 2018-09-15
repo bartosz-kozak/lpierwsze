@@ -1,0 +1,30 @@
+<!doctype html>
+
+<html lang="pl">
+	<head>
+		<meta charset="utf-8">
+		<title>{{ tytul }}</title>
+		<meta name="description" content="Moja strona">
+		<meta name="author" content="B.Kozak">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		</head>
+		<body>
+			<nav class="navbar navbar-light bg-light">
+				<a class="navbar-brand" href={% url 'home' %}>Strona domowa</a>
+				<div class="navbar-nav">
+					<a class="nav-item nav-link" href="{% url 'liczby' %}">O liczbach pierwszych</a>
+				</div>
+			</nav>
+			<div class="card text-center">
+			{% block body_block %}
+			{% endblock %}
+				<div class="card-footer text-muted fixed-bottom">
+					{% if rok == '2018' %}
+					&copy; by Bartosz Kozak 2018
+					{% else %}
+					&copy; by Bartosz Kozak 2018 - {% now "Y" %}
+					{% endif %}
+			</div>
+		</body>
+</html>
+

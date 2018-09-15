@@ -1,18 +1,8 @@
-<!doctype html>
-
-<html lang="pl">
-	<head>
-		<meta charset="utf-8">
-		<title>{{ tytul }}</title>
-		<meta name="description" content="Moja strona">
-		<meta name="author" content="B.Kozak">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	</head>
-	<body>
-		<div class="container pt-5">
-			<h1>Podałeś liczby z poza dozwolonego zakresu, możesz podać liczby większe od 1 i mniejsze od 10001</h1>
-			<br />
-			<br />
-			<a class="btn btn-secondary" href="{% url 'home'  %}" role="button">Jeszcze raz</a>
-	</body>
-</html>
+{% extends "base.html" %}
+{% block body_block %}
+			<div class="card-body">
+				<p>Podałeś liczby z poza dozwolonego zakresu, możesz podać liczby większe od 1 i mniejsze od 10001</p>
+				<br />
+				<br />
+				<a class="btn btn-secondary" href="{% url 'home'  %}" role="button">Jeszcze raz</a>
+{% endblock %}
