@@ -22,7 +22,7 @@ def lpierwsze(request):
     p2 = int(p2)
     if p1 <= 1 or p2 <= 1:
         return render(request, 'error.html',{'tytul':'Błąd','rok':rok})
-    if p1 > 10000 or p2 > 10000:
+    if p1 > 100000 or p2 > 100000:
         return render(request, 'error.html',{'tytul':'Błąd','rok':rok})
     else:
         if p1 > p2:
@@ -37,6 +37,10 @@ def lpierwsze(request):
                 c = a%b # zmienna - reszta z dzielenia
                 if c != 0: # jeżeli warunek spełniony dodaje do dzielnika 1
                     b = b+1
+                    if b > a**0.5: # sprawdza liczby do pierwiastka z a jeżeli nie ma dizelnika w tym przedziale to liczba jest liczbą pierwszą
+                        n = n+1
+                        d = 1
+                        l.append(a)
                 if c == 0:
                     if b < a: # spełnienie warunku oznacza, że liczba jest podzielna przez dzielnik mniejszy od liczby czyli nie jest liczbą pierwszą
                         d = 1
